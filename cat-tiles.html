@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <title>Kategorienzuordnung</title>
+   <!--<base href="http://forms.fruschtique.de">-->
+   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" >
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans" >
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Indie+Flower" >
+   <link rel="stylesheet" href="css/recipe.css" type="text/css" >
+   <link rel="stylesheet" href="css/cat-form.css" type="text/css" >
+   <template id="formRow">
+      <tr>
+         <td style="width: 480px"><a class="rcpName"></a></td>
+         <td class="form-cell"><input type="checkbox" name="für Gäste" onchange="recount()"></td>
+         <td class="form-cell"><input type="checkbox" name="für jeden Tag" onchange="recount()"></td>
+         <td class="form-cell"><input type="checkbox" name="für's Büffet" onchange="recount()"></td>
+         <td class="form-cell"><input type="checkbox" name="für's Frühstück" onchange="recount()"></td>
+         <td class="form-cell"><input type="checkbox" name="zum Sekt" onchange="recount()"></td>
+         <td class="form-cell"><input type="checkbox" name="klein, aber fein" onchange="recount()"></td>
+         <td class="form-cell"><input type="checkbox" name="Quiches" onchange="recount()"></td>
+         <td class="form-cell"><input type="checkbox" name="orientalisch u asiatisch" onchange="recount()"></td>
+         <td class="form-cell"><input type="checkbox" name="italienisch" onchange="recount()"></td>
+         <td class="form-cell"><input type="checkbox" name="deutsch" onchange="recount()"></td>
+         <td class="form-cell"><input type="checkbox" name="meine Lieblinge" onchange="recount()"></td>
+      </tr>
+   </template>
+</head>
+<body onload="getChapters()">
+   <div class="boxtainer">
+      <div class="title">
+         <h1>Kachel-Formular</h1>
+      </div>
+      <div class="logo">
+         <div>
+            <a href="index.html">
+               <img class="logoImage"
+                    src="https://storage.googleapis.com/testx.fruschtique.de/logos/fruschtique%20Logo%20grau%20transparent.png"
+                    alt="fruschtique-Logo" title="fruschtique-Logo">
+            </a>
+         </div>
+      </div>
+      <div class="full">
+         <div style="position: sticky; top: 0; background-color: white;">
+            <div style="height: 200px; display: flex; align-items: flex-end;">
+               <div style="width: 480px;">&nbsp;</div>
+               <div style="width: 36px;  margin: 0; padding: 0 0 8px 0;">
+                  <div class="cats-vertical">für Gäste</div>
+               </div>
+               <div style="width: 36px;  margin: 0; padding: 0 0 8px 0;">
+                  <div class="cats-vertical">für jeden Tag</div>
+               </div>
+               <div style="width: 36px;  margin: 0; padding: 0 0 8px 0;">
+                  <div class="cats-vertical">für's Büffet</div>
+               </div>
+               <div style="width: 36px;  margin: 0; padding: 0 0 8px 0;">
+                  <div class="cats-vertical">für's Frühstück</div>
+               </div>
+               <div style="width: 36px;  margin: 0; padding: 0 0 8px 0;">
+                  <div class="cats-vertical">zum Sekt</div>
+               </div>
+               <div style="width: 36px;  margin: 0; padding: 0 0 8px 0;">
+                  <div class="cats-vertical">klein, aber fein</div>
+               </div>
+               <div style="width: 36px;  margin: 0; padding: 0 0 8px 0;">
+                  <div class="cats-vertical">Quiches</div>
+               </div>
+               <div style="width: 36px;  margin: 0; padding: 0 0 8px 0;">
+                  <div class="cats-vertical">orientalisch u asiatisch</div>
+               </div>
+               <div style="width: 36px;  margin: 0; padding: 0 0 8px 0;">
+                  <div class="cats-vertical">italienisch</div>
+               </div>
+               <div style="width: 36px;  margin: 0; padding: 0 0 8px 0;">
+                  <div class="cats-vertical">deutsch</div>
+               </div>
+               <div style="width: 36px;  margin: 0; padding: 0 0 8px 0;">
+                  <div class="cats-vertical">meine Lieblinge</div>
+               </div>
+            </div>
+            <table>
+               <tr>
+                  <td style= "width: 480px">&nbsp;</td>
+                  <td class="color-cell">
+                     <div class="color-div" style="background-color: #587291"></div>
+                  </td>
+                  <td class="color-cell">
+                     <div class="color-div" style="background-color: #587291"></div>
+                  </td>
+                  <td class="color-cell">
+                     <div class="color-div" style="background-color: #587291"></div>
+                  </td>
+                  <td class="color-cell">
+                     <div class="color-div" style="background-color: #587291"></div>
+                  </td>
+                  <td class="color-cell">
+                     <div class="color-div" style="background-color: #fe621d"></div>
+                  </td>
+                  <td class="color-cell">
+                     <div class="color-div" style="background-color: #fe621d"></div>
+                  </td>
+                  <td class="color-cell">
+                     <div class="color-div" style="background-color: #419d78"></div>
+                  </td>
+                  <td class="color-cell">
+                     <div class="color-div" style="background-color: #565554"></div>
+                  </td>
+                  <td class="color-cell">
+                     <div class="color-div" style="background-color: #565554"></div>
+                  </td>
+                  <td class="color-cell">
+                     <div class="color-div" style="background-color: #565554"></div>
+                  </td>
+                  <td class="color-cell">
+                     <div class="color-div" style="background-color: #a71d31"></div>
+                  </td>
+               </tr>
+               <tr>
+                  <td style= "width: 480px">&nbsp;</td>
+                  <td class="counter"></td>
+                  <td class="counter"></td>
+                  <td class="counter"></td>
+                  <td class="counter"></td>
+                  <td class="counter"></td>
+                  <td class="counter"></td>
+                  <td class="counter"></td>
+                  <td class="counter"></td>
+                  <td class="counter"></td>
+                  <td class="counter"></td>
+                  <td class="counter"></td>
+               </tr>
+            </table>
+         </div>
+         <div id="tabtab">
+         </div>
+         <div style="height: 24px"></div>
+         <input type="submit" value="speichern" id="save" onclick="saveCatAssignments()">
+      </div>
+   </div>
+   <script src="js/cats.js"></script>
+</body>
+</html>
