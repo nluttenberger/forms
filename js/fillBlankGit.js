@@ -229,14 +229,12 @@ function createChapter () {
     headers: hdrs
   })
     .then (resp => {
-      console.log (myChap,myRecp,resp.status)
       if (resp.status === 201) {
         alert ('Kapitel angelegt!')
       }
       return resp.json()
     })
     .then (data => {
-      console.log (data.commit);
     })
     .catch((error) => {
       console.error('Error while creating chapter: ', error);
