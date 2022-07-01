@@ -37,17 +37,6 @@ function rcpIDgen () {
   IDfield.value = 'fr-' + create_UUID();
 }
 
-function passColl () {
-  apiKey = localStorage.getItem('apiKey');
-  hdrs = {
-    'Accept': 'application/vnd.github.v3+json',
-    'Authorization': apiKey
-  }
-  myURL = new URL (document.URL);
-  myColl = myURL.searchParams.get('coll');
-  document.getElementById('book').setAttribute('value',myColl);
-}
-
 function createRecipe () {
   let rcpID = document.getElementById("rcpID").value;
   if (rcpID.length === 0) {
@@ -174,6 +163,14 @@ function saveRecipe() {
 
 // --- create new chapter --------------------------------------------------------------
 function createChapter () {
+  apiKey = localStorage.getItem('apiKey');
+  hdrs = {
+    'Accept': 'application/vnd.github.v3+json',
+    'Authorization': apiKey
+  }
+  myURL = new URL (document.URL);
+  myColl = myURL.searchParams.get('coll');
+  document.getElementById('book').setAttribute('value',myColl);
   myChap = document.getElementById("chapter").value;
   myRecp = myChap;
   //--- create empty recipe to store in chapter ----------------------------------------
