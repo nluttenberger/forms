@@ -156,8 +156,6 @@ function saveRecipe() {
     headers: hdrs
     })
     .then (resp => {
-      console.log (resp.status);
-      console.log (myColl);
       if (resp.status === 201) {
         alert ('Rezept angelegt!')
         let htmlStr = `<a id="toFullForm" href="filled.html?coll=${myColl}&chap=${myChap}&recp=${myRecp}.xml"></a>`
