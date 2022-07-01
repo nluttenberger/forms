@@ -626,7 +626,7 @@ function exportList() {
 
 function add_instrStepText() {
   let button = $('<input type="button" value="+"/>').click(add_instrStepText);
-  $(this).after('<br/><textarea name="instrStepText" class="generalTextField"/> ', button);
+  $(this).after('<br/><textarea name="instrStepText" class="generalTextField"></textarea> ', button);
 }
 
 function add_instrStep() {
