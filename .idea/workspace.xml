@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eef7cc52-a200-47b7-890e-5461f639d6fb" name="Changes" comment="" />
+    <list default="true" id="eef7cc52-a200-47b7-890e-5461f639d6fb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/fillBlankGit.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/fillBlankGit.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,7 +49,7 @@
       <workItem from="1653220601471" duration="4557000" />
       <workItem from="1656160103095" duration="2874000" />
       <workItem from="1656247137806" duration="892000" />
-      <workItem from="1656661779613" duration="5637000" />
+      <workItem from="1656661779613" duration="6419000" />
     </task>
     <servers />
   </component>
