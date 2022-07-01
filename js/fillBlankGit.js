@@ -232,6 +232,7 @@ function createChapter () {
     headers: hdrs
   })
     .then (resp => {
+      console.log (myChap,myRecp,resp.status)
       if (resp.status === 201) {
         alert ('Kapitel angelegt!')
       }
