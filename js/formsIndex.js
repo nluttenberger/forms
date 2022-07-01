@@ -63,7 +63,6 @@ function listHTML (tree) {
     pathEl = entry.path.split ('/');
     chap = pathEl[0];
     recp = pathEl[1];
-    console.log (recp);
     hash = md5(`${chap}${recp}`);
     if (entry.type === 'tree') {
       if (idx != 0) listStr += '</ul>';
