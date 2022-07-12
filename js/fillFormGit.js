@@ -373,12 +373,12 @@ function fetchSublistsIdx () {
   fetch(url_str, {headers: hdrs})
     .then(resp => resp.json())
     .then(data => {
+      console.log (data);
       if (data.length >= 2) {
         let ix = data.indexOf(data.filter(function(item) {
           return item.path = "sublists_xml"
         })[0])
         let sha = data[ix].sha;
-        console.log ('sha: ',sha)
         url_str = `https://api.github.com/repos/nluttenberger/${myColl}/git/trees/${sha}?recursive=true`;
         fetch(url_str,{headers: hdrs})
           .then(resp => {
