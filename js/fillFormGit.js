@@ -373,7 +373,7 @@ function fetchSublistsIdx () {
       console.log ('373 data ', data)
       if (data.length >= 2) {
         let ix = data.indexOf(data.filter(function(item) {
-          return item.name = "sublists_xml"
+          return item.path = "sublists_xml"
         })[0])
         let sha = data[ix].sha;
         url_str = `https://api.github.com/repos/nluttenberger/${myColl}/git/trees/${sha}?recursive=true`;
