@@ -382,6 +382,7 @@ function fetchSublistsIdx () {
             return resp.json();
           })
           .then(data => {
+            console.log ('385 data ', data)
             let tree = data.tree;
             tree.forEach((entry, idx) => {
               $('#subLists').append(`<option value="${entry.path.substr(0, entry.path.indexOf('.xml'))}"></option>`)
