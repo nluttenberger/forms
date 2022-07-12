@@ -369,6 +369,7 @@ function findNormNames () {
 }
 
 function fetchSublistsIdx () {
+  console.log (hdrs);
   let url_str = `https://api.github.com/repos/nluttenberger/${myColl}/contents`;
   fetch(url_str, {headers: hdrs})
     .then(resp => resp.json())
@@ -619,7 +620,7 @@ function exportList() {
       .then (data => {
         console.log (data.commit);
       })
-      . catch((error) => {
+      .catch((error) => {
         console.error('Error while exporting sublist: ', error);
       })
 }
