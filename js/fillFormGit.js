@@ -47,7 +47,6 @@ function getForm () {
       gitName = data.name;
       gitPath = data.path;
       gitSHA = data.sha;
-      console.log (gitName, gitPath, gitSHA)
       makeForm(rcpXML);
     })
     .catch ((error) => {
@@ -316,7 +315,6 @@ function genRefs () {
       igtCat = b64_to_utf8 (data.content);
       igtCat = JSON.parse (igtCat);
       igtCat = igtCat.ingredients;
-      console.log (igtCat);
       findNormNames();
     })
     .catch ((error) => {
@@ -361,7 +359,6 @@ function findNormNames () {
         });
         let mObj = new Object();
         mObj = matches[0];
-        console.log (mObj.name);
         ref.value = mObj.name;
       }
     })
@@ -373,7 +370,6 @@ function fetchSublistsIdx () {
   fetch(url_str, {headers: hdrs})
     .then(resp => resp.json())
     .then(data => {
-      console.log (data);
       if (data.length >= 2) {
         let ix = data.indexOf(data.filter(function(item) {
           return item.path = "sublists_xml"
@@ -603,7 +599,6 @@ function exportList() {
     'content': b64Recipe,
   }
   let p = `sublists_xml/${listName}.xml`;
-  console.log (p)
   let urlStr = `https://api.github.com/repos/nluttenberger/${myColl}/contents/${p}`;
   // upload and commit --------------------------------------------------
   fetch (urlStr,{
@@ -619,7 +614,6 @@ function exportList() {
         return resp.json()
       })
       .then (data => {
-        console.log (data.commit);
       })
       .catch((error) => {
         console.error('Error while exporting sublist: ', error);
@@ -843,7 +837,6 @@ function saveRecipe() {
     'sha': gitSHA
   }
   let urlStr = `https://api.github.com/repos/nluttenberger/${myColl}/contents/${gitPath}`;
-  console.log (gitName, gitPath, gitSHA);
   // upload and commit --------------------------------------------------
   fetch (urlStr,{
     method: 'PUT',
@@ -859,7 +852,6 @@ function saveRecipe() {
       return resp.json()
     })
     .then (data => {
-      //console.log (data.commit);
     })
     .catch((error) => {
       console.error('Error while saving recipe: ', error);
