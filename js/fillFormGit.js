@@ -371,7 +371,7 @@ function fetchSublistsIdx () {
     .then(resp => resp.json())
     .then(data => {
       console.log ('373 data ', data)
-      if (data.length >= 2) {
+      /*if (data.length >= 2) {
         let ix = data.indexOf(data.filter(function(item) {
           return item.path = "sublists_xml"
         })[0])
@@ -383,9 +383,10 @@ function fetchSublistsIdx () {
             return resp.json();
           })
           .then(data => {
-            let tree = data.tree;
-            tree.forEach((entry, idx) => {
-              $('#subLists').append(`<option value="${entry.path.substr(0, entry.path.indexOf('.xml'))}"></option>`)
+            let tree = data.tree;*/
+            data.forEach((entry, idx) => {
+              $('#subLists').append(`<option value="${entry.name}"></option>`)
+              // $('#subLists').append(`<option value="${entry.path.substr(0, entry.path.indexOf('.xml'))}"></option>`)
             })
           })
           .catch ((error) => {
