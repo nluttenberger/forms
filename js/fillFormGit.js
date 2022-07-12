@@ -366,7 +366,7 @@ function findNormNames () {
 }
 
 function fetchSublistsIdx () {
-  let url_str = `https://api.github.com/repos/nluttenberger/${myColl}/contents`;
+  let url_str = `https://api.github.com/repos/nluttenberger/${myColl}/contents/sublists_xml`;
   fetch(url_str, {headers: hdrs})
     .then(resp => resp.json())
     .then(data => {
