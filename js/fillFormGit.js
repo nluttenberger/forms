@@ -378,6 +378,7 @@ function fetchSublistsIdx () {
           return item.path = "sublists_xml"
         })[0])
         let sha = data[ix].sha;
+        console.log ('sha: ',sha)
         url_str = `https://api.github.com/repos/nluttenberger/${myColl}/git/trees/${sha}?recursive=true`;
         fetch(url_str,{headers: hdrs})
           .then(resp => {
@@ -602,6 +603,7 @@ function exportList() {
     'content': b64Recipe,
   }
   let p = `sublists_xml/${listName}.xml`;
+  console.log (p)
   let urlStr = `https://api.github.com/repos/nluttenberger/${myColl}/contents/${p}`;
   // upload and commit --------------------------------------------------
   fetch (urlStr,{
