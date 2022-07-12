@@ -370,7 +370,7 @@ function fetchSublistsIdx () {
   fetch(url_str, {headers: hdrs})
     .then(resp => resp.json())
     .then(data => {
-      console.log ('373 data ', data)
+      console.log ('373 data ', data);
       /*if (data.length >= 2) {
         let ix = data.indexOf(data.filter(function(item) {
           return item.path = "sublists_xml"
@@ -384,19 +384,18 @@ function fetchSublistsIdx () {
           })
           .then(data => {
             let tree = data.tree;*/
-            data.forEach((entry, idx) => {
-              $('#subLists').append(`<option value="${entry.name}"></option>`)
-              // $('#subLists').append(`<option value="${entry.path.substr(0, entry.path.indexOf('.xml'))}"></option>`)
-            })
-          })
-          .catch ((error) => {
-            console.error('Error while importing sublists:', error);
-          })
-      }
+        data.forEach((entry, idx) => {
+          $('#subLists').append(`<option value="${entry.name}"></option>`)
+          // $('#subLists').append(`<option value="${entry.path.substr(0, entry.path.indexOf('.xml'))}"></option>`)
+        })
+      })
+    .catch ((error) => {
+      console.error('Error while importing sublists:', error);
     })
+    /*})
     .catch((error) => {
       console.error('Error while reading sublists sha:', error);
-    });
+    });*/
 }
 
 function fetchIgtRefs () {
