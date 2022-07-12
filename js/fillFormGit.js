@@ -373,7 +373,7 @@ function fetchSublistsIdx () {
   fetch(url_str, {headers: hdrs})
     .then(resp => resp.json())
     .then(data => {
-      if (data.length => 2) {
+      if (data.length >= 2) {
         let ix = data.indexOf(data.filter(function(item) {
           return item.path = "sublists_xml"
         })[0])
