@@ -385,7 +385,7 @@ function fetchSublistsIdx () {
           .then(data => {
             let tree = data.tree;*/
         data.forEach((entry, idx) => {
-          $('#subLists').append(`<option value="${entry.name}"></option>`)
+          $('#subLists').append(`<option value="${entry.name.substr(0, entry.name.indexOf('.xml'))}"></option>`)
           // $('#subLists').append(`<option value="${entry.path.substr(0, entry.path.indexOf('.xml'))}"></option>`)
         })
       })
