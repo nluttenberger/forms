@@ -34,6 +34,8 @@ function getChapters () {
   myColl = myURL.searchParams.get('coll');
   // create list of chapters
   url_str = `https://api.github.com/repos/nluttenberger/${myColl}/contents`;
+  console.log (url_str)
+
   fetch(url_str,{headers: hdrs})
     .then(resp => {
       return resp.json();
@@ -43,6 +45,7 @@ function getChapters () {
         return item.path === "recipes_xml"
       })[0])
       let sha = data[ix].sha;
+
       url_str = `https://api.github.com/repos/nluttenberger/${myColl}/git/trees/${sha}?recursive=true`;
       fetch(url_str,{headers: hdrs})
         .then (resp =>  {
