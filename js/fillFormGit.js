@@ -643,6 +643,11 @@ function saveRecipe() {
     alert ("Bitte eine Rezept-ID eingeben oder generieren!");
     return;
   }
+  let rcpOneWordName = document.getElementById("rcpOneWordName").value;
+  if (rcpOneWordName === null) {
+    alert ("Bitte einen Ein-Wort-Namen für das Rezept eingeben!");
+    return;
+  }
   let text = '<?xml version="1.0" encoding="UTF-8"?>\n' +
       '<!DOCTYPE stylesheet SYSTEM "file:///C:/Users/nlutt/Documents/Websites/tools/entities.dtd">\n' +
       '<fr:recipe \n' +
