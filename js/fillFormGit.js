@@ -78,7 +78,9 @@ function makeForm (data) {
   formStr += '<label>ID<input type="text" class="shortTextInput" id="rcpID" value="';
   formStr += `${rcpID}`;
   formStr += '"></label><input type="button" value="ID generieren" id="IDbtn" onclick="rcpIDgen()"></input></div>';
-  formStr += '<fieldset><legend>Zutaten für Zutaten-Index</legend><label><input type="text" class="longTextInput" name="recipeKeywords" value="${rcpKeywords}">durch Komma getrennt</label></fieldset><fieldset id="intro"> <legend>Einleitung</legend>';
+  formStr += '<fieldset><legend>Zutaten für Zutaten-Index</legend><label><input type="text" class="longTextInput" name="recipeKeywords" value="'
+  formStr += `${rcpKeywords}`;
+  formStr += '">durch Komma getrennt</label></fieldset><fieldset id="intro"> <legend>Einleitung</legend>';
 
   x = xmlDoc.getElementsByTagName("fr:introText");
   for (let i = 0; i < x.length; i++) {
