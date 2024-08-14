@@ -67,15 +67,14 @@ function makeForm (data) {
   let x = xmlDoc.getElementsByTagName("fr:recipeKeywords")[0].childNodes[0];
   const rcpKeywords = (x === undefined) ? "" : `${x.nodeValue}`;
   let formStr = `<fieldset id="recipe"><div style="margin-top: 18px; margin-bottom: 36px"><label>Rezept<input type="text" class="longTextInput" name="recipeName" value="${rcpName}"></label>`;
-
   formStr += '<label>Kapitel<input type="text" class="shortTextInput" id="chapter" value="';
   formStr += `${chapter}`;
   formStr += '"></label><label>Sammlung<input type="text" class="shortTextInput" id="book" value="';
   formStr += `${cookbook}`;
   formStr += '"></label><br>'
-  formStr += <label>Ein-Wort-RezeptName<input type="text" class="shortTextInput" id="rcpOneWordName" value="';
+  formStr += '<label>Ein-Wort-RezeptName<input type="text" class="shortTextInput" id="rcpOneWordName" value="';
   formStr += `${rcpOneWordName}`;
-  formStr += '"></input></label>
+  formStr += '"></input></label>';
   formStr += '<label>ID<input type="text" class="shortTextInput" id="rcpID" value="';
   formStr += `${rcpID}`;
   formStr += '"></label><input type="button" value="ID generieren" id="IDbtn" onclick="rcpIDgen()"></input></div>';
