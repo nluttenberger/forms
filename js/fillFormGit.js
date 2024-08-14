@@ -72,7 +72,7 @@ function makeForm (data) {
   formStr += '"></label><label>Sammlung<input type="text" class="shortTextInput" id="book" value="';
   formStr += `${cookbook}`;
   formStr += '"></label><br>'
-  formStr += '<label>Ein-Wort-RezeptName<input type="text" class="shortTextInput" id="rcpOneWordName" value="';
+  formStr += '<label>Ein-Wort-Rezeptname<input type="text" class="shortTextInput" id="rcpOneWordName" value="';
   formStr += `${rcpOneWordName}`;
   formStr += '"></input></label>';
   formStr += '<label>ID<input type="text" class="shortTextInput" id="rcpID" value="';
