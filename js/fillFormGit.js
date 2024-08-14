@@ -71,6 +71,8 @@ function makeForm (data) {
   formStr += `${chapter}`;
   formStr += '"></label><label>Sammlung<input type="text" class="shortTextInput" id="book" value="';
   formStr += `${cookbook}`;
+  formStr += '"></label><label>Ein-Wort-RezeptName<input type="text" class="shortTextInput" id="rcpOneWordName" value="';
+  formStr += `${rcpOneWordName}`;
   formStr += '"></label></div>';
   formStr += `<fieldset><legend>Zutaten für Zutaten-Index</legend><label><input type="text" class="longTextInput" name="recipeKeywords" value="${rcpKeywords}">durch Komma getrennt</label></fieldset><fieldset id="intro"> <legend>Einleitung</legend>`;
 
