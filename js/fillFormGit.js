@@ -651,6 +651,7 @@ function saveRecipe() {
       '    xsi:schemaLocation= \n' +
       '    "http://fruschtique.de/ns/recipe ../../../tools/recipe.xsd" \n' +
       '    rcpID = "' + rcpID + '" >\n' +
+      '    rcpOneWordName = "' + rcpOneWordName + '" >\n' +
       '</fr:recipe>';
   let parser = new DOMParser();
   let xmlDoc = parser.parseFromString(text, "text/xml");
