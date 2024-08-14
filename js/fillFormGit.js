@@ -650,7 +650,7 @@ function saveRecipe() {
       '    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" \n' +
       '    xsi:schemaLocation= \n' +
       '    "http://fruschtique.de/ns/recipe ../../../tools/recipe.xsd" \n' +
-      '    rcpID = "' + rcpID + '" >\n' +
+      '    rcpID = "' + rcpID + '" \n' +
       '    rcpOneWordName = "' + rcpOneWordName + '" >\n' +
       '</fr:recipe>';
   let parser = new DOMParser();
