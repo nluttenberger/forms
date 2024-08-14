@@ -61,6 +61,7 @@ function makeForm (data) {
   chapter = xmlDoc.getElementsByTagName("fr:chapter")[0].childNodes[0].nodeValue;
   rcpName = xmlDoc.getElementsByTagName("fr:recipeName")[0].childNodes[0].nodeValue;
   rcpID = xmlDoc.getElementsByTagName("fr:recipe")[0].getAttribute("rcpID");
+  rcpOneWordName = xmlDoc.getElementsByTagName("fr:recipe")[0].getAttribute("rcpOneWordName");
   document.title = (`Eingabe: ${rcpName}`)
   let x = xmlDoc.getElementsByTagName("fr:recipeKeywords")[0].childNodes[0];
   const rcpKeywords = (x === undefined) ? "" : `${x.nodeValue}`;
