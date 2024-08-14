@@ -63,14 +63,14 @@ function makeForm (data) {
   rcpName = xmlDoc.getElementsByTagName("fr:recipeName")[0].childNodes[0].nodeValue;
   rcpID = xmlDoc.getElementsByTagName("fr:recipe")[0].getAttribute("rcpID");
   rcpOneWordName = xmlDoc.getElementsByTagName("fr:recipe")[0].getAttribute("rcpOneWordName");
-  <input type="button" value="ID generieren" id="IDbtn" onclick="rcpIDgen()"></input>
   document.title = (`Eingabe: ${rcpName}`)
   let x = xmlDoc.getElementsByTagName("fr:recipeKeywords")[0].childNodes[0];
   const rcpKeywords = (x === undefined) ? "" : `${x.nodeValue}`;
   let formStr = `<fieldset id="recipe"><div style="margin-top: 18px; margin-bottom: 36px"><label>Rezept<input type="text" class="longTextInput" name="recipeName" value="${rcpName}"></label>`;
   formStr += '<label>ID<input type="text" class="shortTextInput" id="rcpID" value="';
   formStr += `${rcpID}`;
-  formStr += '"></label><label>Kapitel<input type="text" class="shortTextInput" id="chapter" value="';
+  formStr += '"></label><input type="button" value="ID generieren" id="IDbtn" onclick="rcpIDgen()"></input>';
+  formStr += '<label>Kapitel<input type="text" class="shortTextInput" id="chapter" value="';
   formStr += `${chapter}`;
   formStr += '"></label><label>Sammlung<input type="text" class="shortTextInput" id="book" value="';
   formStr += `${cookbook}`;
