@@ -15,6 +15,7 @@ let cookbook = '';
 let chapter = '';
 let rcpName = '';
 let rcpID = '';
+let rcpOneWordName = '';
 let ingr = '';
 const re = /^\d{2}/;
 let apiKey;
