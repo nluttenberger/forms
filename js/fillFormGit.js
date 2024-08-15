@@ -657,11 +657,7 @@ function rcpIDgen () {
 
 // --- save recipe --------------------------------------------------------------
 function saveRecipe() {
-  let rcpID = document.getElementById("rcpID").value;
-  if (rcpID.length === 0) {
-    alert ("Bitte eine Rezept-ID eingeben oder generieren!");
-    return;
-  }
+
   let rcpOneWordName = document.getElementById("rcpOneWordName").value;
   if (rcpOneWordName === null) {
     alert ("Bitte einen Ein-Wort-Namen für das Rezept eingeben!");
@@ -677,6 +673,7 @@ function saveRecipe() {
       '    rcpID = "' + rcpID + '" \n' +
       '    rcpOneWordName = "' + rcpOneWordName + '" >\n' +
       '</fr:recipe>';
+  console.log (text)
   let parser = new DOMParser();
   let xmlDoc = parser.parseFromString(text, "text/xml");
   const chapter = document.getElementById("chapter").value;
