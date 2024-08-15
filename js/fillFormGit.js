@@ -51,6 +51,7 @@ function getForm () {
     let xmlDoc = parser.parseFromString(rcpXML, "text/xml");
     prefix = xmlDoc.getElementsByTagName("fr:recipe")[0].getAttribute("prefix");
     rcpID = `${prefix}:${myRecp}`
+    console.log (rcpID)
   })
   .catch ((error) => {
     console.log('Error while reading chapter xml data:', error);
@@ -77,7 +78,7 @@ function makeForm (data) {
   cookbook = xmlDoc.getElementsByTagName("fr:book")[0].childNodes[0].nodeValue;
   chapter = xmlDoc.getElementsByTagName("fr:chapter")[0].childNodes[0].nodeValue;
   rcpName = xmlDoc.getElementsByTagName("fr:recipeName")[0].childNodes[0].nodeValue;
-  rcpID = xmlDoc.getElementsByTagName("fr:recipe")[0].getAttribute("rcpID");
+  //rcpID = xmlDoc.getElementsByTagName("fr:recipe")[0].getAttribute("rcpID");
   rcpOneWordName = xmlDoc.getElementsByTagName("fr:recipe")[0].getAttribute("rcpOneWordName");
   document.title = (`Eingabe: ${rcpName}`)
   let x = xmlDoc.getElementsByTagName("fr:recipeKeywords")[0].childNodes[0];
