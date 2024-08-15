@@ -50,7 +50,7 @@ function getForm () {
     let parser = new DOMParser();
     let xmlDoc = parser.parseFromString(rcpXML, "text/xml");
     prefix = xmlDoc.getElementsByTagName("fr:recipe")[0].getAttribute("prefix");
-    rcpID = `${prefix}_${myRecp.split(".xml")[0].replace(/-/g, '').replace(/ /g,'_')}`
+    rcpID = `${prefix}_${myRecp.split(".xml")[0].replace(/-/g, '').replace(/ /g,'_').replace(/./g,'').replace(/,/g,'')}`
     console.log (rcpID)
     url_str = `https://api.github.com/repos/nluttenberger/${myColl}/contents/recipes_xml/${myChap}/${myRecp}`;
     fetch (url_str,{headers: hdrs})
