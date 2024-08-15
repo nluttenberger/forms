@@ -16,7 +16,7 @@ let cookbook = '';
 let chapter = '';
 let rcpName = '';
 let rcpID = '';
-let rcpOneWordName = '';
+let rcpOneWordName;
 let ingr = '';
 const re = /^\d{2}/;
 let apiKey;
@@ -658,7 +658,6 @@ function rcpIDgen () {
 // --- save recipe --------------------------------------------------------------
 function saveRecipe() {
 
-  let rcpOneWordName = document.getElementById("rcpOneWordName").value;
   if (rcpOneWordName === null) {
     alert ("Bitte einen Ein-Wort-Namen für das Rezept eingeben!");
     return;
