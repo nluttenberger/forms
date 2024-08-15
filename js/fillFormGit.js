@@ -658,7 +658,8 @@ function rcpIDgen () {
 // --- save recipe --------------------------------------------------------------
 function saveRecipe() {
 
-  if (rcpOneWordName === null) {
+  rcpOneWordName = document.getElementById("rcpOneWordName").value
+  if (rcpOneWordName.length === 0) {
     alert ("Bitte einen Ein-Wort-Namen für das Rezept eingeben!");
     return;
   }
