@@ -4,6 +4,7 @@ let myColl;
 let myChap;
 let myRecp;
 let rcpXML;
+let prefix;
 let importDir;
 let importPath;
 let gitName, gitPath, gitSHA;
@@ -40,7 +41,22 @@ function getForm () {
   myChap = myURL.searchParams.get('chap');
   myRecp = myURL.searchParams.get('recp');
   console.log (`Sammlung: ${myColl}, Kapitel: ${myChap}, Rezept: ${myRecp}`);
-  let url_str = `https://api.github.com/repos/nluttenberger/${myColl}/contents/recipes_xml/${myChap}/${myRecp}`;
+
+  let url_str = `https://api.github.com/repos/nluttenberger/${myColl}/contents/recipes_xml/${myChap}/${myChap}.xml`;
+  fetch (url_str,{headers: hdrs})
+  .then (resp => resp.json())
+  .then (data => {
+    rcpXML = b64_to_utf8(data.content);
+    let parser = new DOMParser();
+    let xmlDoc = parser.parseFromString(rcpXML, "text/xml");
+    prefix = xmlDoc.getElementsByTagName("fr:recipe")[0].getAttribute("prefix");
+    rcpID = `${prefix}:${myRecp}`
+  })
+  .catch ((error) => {
+    console.log('Error while reading chapter xml data:', error);
+  })
+
+  url_str = `https://api.github.com/repos/nluttenberger/${myColl}/contents/recipes_xml/${myChap}/${myRecp}`;
   fetch (url_str,{headers: hdrs})
     .then (resp => resp.json())
     .then (data => {
