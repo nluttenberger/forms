@@ -50,7 +50,7 @@ function getForm () {
     let parser = new DOMParser();
     let xmlDoc = parser.parseFromString(rcpXML, "text/xml");
     prefix = xmlDoc.getElementsByTagName("fr:recipe")[0].getAttribute("prefix");
-    rcpID = `${prefix}:${myRecp.split(".xml")[0]}`
+    rcpID = `${prefix}_${myRecp.split(".xml")[0]}`
     console.log (rcpID)
     url_str = `https://api.github.com/repos/nluttenberger/${myColl}/contents/recipes_xml/${myChap}/${myRecp}`;
     fetch (url_str,{headers: hdrs})
@@ -77,7 +77,6 @@ function makeForm (data) {
   cookbook = xmlDoc.getElementsByTagName("fr:book")[0].childNodes[0].nodeValue;
   chapter = xmlDoc.getElementsByTagName("fr:chapter")[0].childNodes[0].nodeValue;
   rcpName = xmlDoc.getElementsByTagName("fr:recipeName")[0].childNodes[0].nodeValue;
-  //rcpID = xmlDoc.getElementsByTagName("fr:recipe")[0].getAttribute("rcpID");
   rcpOneWordName = xmlDoc.getElementsByTagName("fr:recipe")[0].getAttribute("rcpOneWordName");
   document.title = (`Eingabe: ${rcpName}`)
   let x = xmlDoc.getElementsByTagName("fr:recipeKeywords")[0].childNodes[0];
