@@ -858,7 +858,7 @@ function saveRecipe() {
       if (resp.status === 200) {
         alert ('Rezept abgespeichert!')
         //location.reload(true);
-        url_str = `https://api.github.com/repos/nluttenberger/${myColl}/contents/recipes_xml/${myChap}/${myRecp}`;
+        let url_str = `https://api.github.com/repos/nluttenberger/${myColl}/contents/recipes_xml/${myChap}/${myRecp}`;
         fetch (url_str,{headers: hdrs})
           .then (resp => resp.json())
           .then (data => {
