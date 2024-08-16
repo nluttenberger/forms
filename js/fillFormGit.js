@@ -858,7 +858,8 @@ function saveRecipe() {
       console.log('Update: ', resp.status, resp.statusText);
       if (resp.status === 200) {
         alert ('Rezept abgespeichert!')
-        fetch (urlStrReload,{headers: hdrs})
+        location.reload(true)
+        /*fetch (urlStrReload,{headers: hdrs})
           .then (resp => resp.json())
           .then (data => {
             rcpXML = b64_to_utf8(data.content);
@@ -870,6 +871,7 @@ function saveRecipe() {
           .catch ((error) => {
             console.log('Error while reading recipe xml data:', error);
           })
+        */
       }
       return resp.json()
     })
