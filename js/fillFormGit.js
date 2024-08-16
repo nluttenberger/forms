@@ -846,9 +846,10 @@ function saveRecipe() {
     'content': b64Recipe,
     'sha': gitSHA
   }
-  let urlStr = `https://api.github.com/repos/nluttenberger/${myColl}/contents/${gitPath}`;
+  let urlStrUp = `https://api.github.com/repos/nluttenberger/${myColl}/contents/${gitPath}`;
+  let urlStrReload = `https://api.github.com/repos/nluttenberger/${myColl}/contents/recipes_xml/${myChap}/${myRecp}`;
   // upload and commit --------------------------------------------------
-  fetch (urlStr,{
+  fetch (urlStrUp,{
     method: 'PUT',
     body: JSON.stringify(update),
     headers: hdrs
@@ -857,9 +858,7 @@ function saveRecipe() {
       console.log('Update: ', resp.status, resp.statusText);
       if (resp.status === 200) {
         alert ('Rezept abgespeichert!')
-        //location.reload(true);
-        let url_str = `https://api.github.com/repos/nluttenberger/${myColl}/contents/recipes_xml/${myChap}/${myRecp}`;
-        fetch (url_str,{headers: hdrs})
+        fetch (urlStrReload,{headers: hdrs})
           .then (resp => resp.json())
           .then (data => {
             rcpXML = b64_to_utf8(data.content);
