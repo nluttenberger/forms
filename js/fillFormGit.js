@@ -673,7 +673,7 @@ function saveRecipe() {
       '    rcpID = "' + rcpID + '" \n' +
       '    rcpOneWordName = "' + rcpOneWordName + '" >\n' +
       '</fr:recipe>';
-  console.log (text)
+  //console.log (text)
   let parser = new DOMParser();
   let xmlDoc = parser.parseFromString(text, "text/xml");
   const chapter = document.getElementById("chapter").value;
@@ -856,7 +856,20 @@ function saveRecipe() {
       console.log('Update: ', resp.status, resp.statusText);
       if (resp.status === 200) {
         alert ('Rezept abgespeichert!')
-        location.reload(true);
+        //location.reload(true);
+        url_str = `https://api.github.com/repos/nluttenberger/${myColl}/contents/recipes_xml/${myChap}/${myRecp}`;
+        fetch (url_str,{headers: hdrs})
+          .then (resp => resp.json())
+          .then (data => {
+            rcpXML = b64_to_utf8(data.content);
+            gitName = data.name;
+            gitPath = data.path;
+            gitSHA = data.sha;
+            makeForm(rcpXML);
+          })
+          .catch ((error) => {
+            console.log('Error while reading recipe xml data:', error);
+          })
       }
       return resp.json()
     })
