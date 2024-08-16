@@ -859,9 +859,9 @@ function saveRecipe() {
       if (resp.status === 200) {
         alert ('Rezept abgespeichert!')
       }
-      return resp.json()
+      location.reload(true)
       })
-    .then (location.reload(true))
+    
     .catch((error) => {
       console.error('Error while saving recipe: ', error);
   })
