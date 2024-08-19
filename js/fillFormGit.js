@@ -857,7 +857,7 @@ function saveRecipe() {
       if (resp.status === 200) {
         alert ('Rezept abgespeichert!')
       }
-      location.reload(true)
+      //location.reload(true)
       
       })
     
